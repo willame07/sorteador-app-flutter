@@ -12,28 +12,31 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var numeroSorteado = 0;
   var qtdSorteios = 0;
-  var ultimosorteio = 0;
+  var penUltimoSorteio = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu Primeiro App Flutter"),
+        title: Text("Meu Primeiro App Flutter", style: GoogleFonts.pacifico()),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            "Tivemos até agora $qtdSorteios sorteios!", 
-            style:GoogleFonts.tajawal(fontSize: 48)),
+            "Tivemos até agora $qtdSorteios sorteios!",
+            style: GoogleFonts.roboto(fontSize: 70),
+          ),
           Text(
-            numeroSorteado.toString(), 
-            style:GoogleFonts.tajawal(fontSize: 100)),
+            numeroSorteado.toString(),
+            style: GoogleFonts.roboto(fontSize: 100),
+          ),
           Text(
-            "O ultimo número sorteado foi: $ultimosorteio", 
-            style:GoogleFonts.tajawal(fontSize: 48)),
+            "O último número sorteado foi: $penUltimoSorteio",
+            style: GoogleFonts.roboto(fontSize: 50),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -41,12 +44,12 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           setState(() {
             qtdSorteios++;
+            penUltimoSorteio = numeroSorteado;
             numeroSorteado = SorteadorService.sortearNumero();
-            ultimosorteio = numeroSorteado;
           });
-          debugPrint(numeroSorteado.toString());
         },
       ),
     );
   }
 }
+
