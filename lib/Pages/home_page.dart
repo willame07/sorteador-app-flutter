@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu Primeiro App Flutter", style: GoogleFonts.pacifico()),
+        title: Text("Meu Primeiro App Flutter", style: GoogleFonts.actor()),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Column(
