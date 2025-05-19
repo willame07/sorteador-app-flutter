@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: false, primarySwatch: Colors.deepPurple,
+      theme: ThemeData(useMaterial3: false, primarySwatch: Colors.indigoAccent,
       textTheme: GoogleFonts.abelTextTheme()),
       home: HomePage(),
     );
