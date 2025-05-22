@@ -18,26 +18,59 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu Primeiro App Flutter", style: GoogleFonts.actor()),
+        title: Text("Meu Primeiro App Flutter", style: GoogleFonts.arima()),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            "Tivemos até agora $qtdSorteios sorteios!",
-            style: GoogleFonts.roboto(fontSize: 70),
-          ),
-          Text(
-            numeroSorteado.toString(),
-            style: GoogleFonts.roboto(fontSize: 100),
-          ),
-          Text(
-            "O último número sorteado foi: $penUltimoSorteio",
-            style: GoogleFonts.roboto(fontSize: 50),
-          ),
-        ],
+      body: Container(
+        width: double.infinity,
+        color: const Color.fromARGB(255, 133, 133, 133),
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "Tivemos até agora $qtdSorteios sorteios!",
+              style: GoogleFonts.roboto(fontSize: 70),
+            ),
+            Text(
+              numeroSorteado.toString(),
+              style: GoogleFonts.roboto(fontSize: 100),
+            ),
+            Text(
+              "O último número sorteado foi: $penUltimoSorteio",
+              style: GoogleFonts.roboto(fontSize: 50),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Container(
+                    color: Colors.red,
+                    child: Text("10", style: GoogleFonts.roboto(fontSize: 50)),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.blue,
+                    child: Center(
+                      child: Text(
+                        "20",
+                        style: GoogleFonts.roboto(fontSize: 50),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.green,
+                    child: Text("30", style: GoogleFonts.roboto(fontSize: 50)),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.monetization_on_outlined),
@@ -52,4 +85,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
